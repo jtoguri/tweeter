@@ -30,4 +30,10 @@ body {
 
  main {
    width: 90%;
+   display: flex;
+   flex-flow: row wrap;
+ }
+
+ main * {
+   flex: 1 100%;
  }
