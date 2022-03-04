@@ -24,6 +24,10 @@
   color: white;
 }
 
+.form-helper > button:hover {
+  cursor: pointer;
+}
+
 .form-helper {
   display: flex;
   text-align: end;
