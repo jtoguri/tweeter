@@ -15,7 +15,7 @@ $( document ).ready(function() {
       </header>
       <p>${tweet.content.text}</p>
       <footer>
-        <span>${tweet.created_at} days ago</span>
+        <span>${timeago.format(tweet.created_at)}</span>
         <ul>
           <li><i class="fa-solid fa-flag"></i></li>
           <li><i class="fa-solid fa-retweet"></i></li>
@@ -50,7 +50,16 @@ $( document ).ready(function() {
 
   $( "form" ).submit(function( e ) {
     e.preventDefault();
-    const newTweet = $( this ).serialize();
+    const maxTweetLength = 140;
+    if (Number(this.counter.value) < 0) {
+      alert("exceeds max tweet length");
+      return;
+    }
+    if (Number(this.counter.value) === 140) {
+      alert("no tweet content present");
+      return;
+    }
+    const newTweet = $( this ).serialize(); 
     $.post("/tweets", newTweet);
   })
 });
