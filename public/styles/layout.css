@@ -1,7 +1,6 @@
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
  */
 html {
   box-sizing: border-box;
@@ -24,9 +23,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* Styling the main content section  */
 
  main {
    width: 90%;
@@ -98,3 +95,14 @@ body {
    color: rgb(193, 154, 64);
    cursor: pointer;
  }
+
+ #error-message {
+   border: 3px solid red;
+   color: red;
+   margin-top: 1em;
+   padding: 0.5em 1em;
+ }
+
+ #error-message {
+   display: none;
+  }
