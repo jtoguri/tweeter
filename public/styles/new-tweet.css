@@ -1,9 +1,13 @@
+/*
+* Styling for the tweet submission section
+*/
+
 .new-tweet {
   display: flex;
   flex-flow: row wrap;
 }
 
-.new-tweet * {
+.new-tweet > * {
   flex: 1 100%;
 }
 
@@ -18,18 +22,21 @@
   resize: none;
 }
 
+.form-helper {
+  display: flex;
+  font-family: 'Bungee', cursive;
+}
+
+.form-helper .counter {
+  margin-left: auto;
+}
+
+/* Style the form submission button */
 .form-helper > button {
   max-width: max-content;
   background-color: #4056A1;
   color: white;
 }
-
 .form-helper > button:hover {
   cursor: pointer;
-}
-
-.form-helper {
-  display: flex;
-  text-align: end;
-  font-family: 'Bungee', cursive;
 }

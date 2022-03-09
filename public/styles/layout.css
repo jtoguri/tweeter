@@ -25,84 +25,85 @@ body {
 
 /* Styling the main content section  */
 
- main {
-   width: 90%;
-   display: flex;
-   flex-flow: row wrap;
- }
-
- main * {
-   flex: 1 100%;
- }
-
- article.tweet {
-   border: 4px solid black;
-   margin: 2em 0;
-   padding: 1em 0.5em;
- }
-
- article.tweet header {
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-start;
-   column-gap: 1em;
-   padding: 0 1em;
- }
-
- article.tweet header img, article.tweet header img + span  {
-    max-width: fit-content;
- }
-
- article.tweet header span + span {
+main {
+  width: 90%;
   display: flex;
-  justify-content: flex-end;
-  color: rgb(201, 202, 223);
- }
+  flex-flow: row wrap;
+}
 
- article.tweet p {
-   padding: 1em;
-   border-bottom: 3px solid black;
-   margin: 0;
- }
+main > * {
+  flex: 1 100%;
+}
 
- article.tweet:hover {
-   box-shadow: 7px 7px rgb(201, 202, 223);
- }
+/* Styling each tweet */
 
- article.tweet footer {
-   display: flex;
-   justify-content: flex-start;
-   height: fit-content;
-   padding: 0 1.5em;
-   margin-top: 0.5em;
-   font-size: 0.6em;
- }
+article.tweet {
+  border: 4px solid black;
+  margin: 2em 0;
+  padding: 1em 0.5em;
+}
 
- article.tweet footer ul {
-  list-style: none;
+article.tweet header {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   column-gap: 1em;
+  padding: 0 1em;
+}
+
+article.tweet header span + span {
+margin-left: auto;
+font-weight: bold;
+color: rgb(201, 202, 223);
+}
+
+article.tweet p {
+  padding: 1.5em 1em;
+  border-bottom: 3px solid black;
   margin: 0;
- }
+  font-weight: bold;
+}
 
- article.tweet footer ul * {
-  color: #4056A1; 
-  max-width: fit-content;
- }
+article.tweet:hover {
+  box-shadow: 7px 7px rgb(201, 202, 223);
+}
 
- article.tweet footer ul *:hover {
-   color: rgb(193, 154, 64);
-   cursor: pointer;
- }
+article.tweet footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: fit-content;
+  padding: 0 1.5em;
+  font-size: 0.6em;
+  font-weight: bold;
+}
 
- #error-message {
-   border: 3px solid red;
-   color: red;
-   margin-top: 1em;
-   padding: 0.5em 1em;
- }
+article.tweet footer ul {
+list-style: none;
+display: flex;
+justify-content: flex-end;
+column-gap: 1em;
+margin-left: auto;
+}
 
- #error-message {
-   display: none;
-  }
+article.tweet footer ul * {
+color: #4056A1; 
+max-width: fit-content;
+}
+
+article.tweet footer ul *:hover {
+  color: rgb(193, 154, 64);
+  cursor: pointer;
+}
+
+#error-message {
+  border: 3px solid red;
+  color: red;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+}
+
+#error-message {
+  display: none;
+}

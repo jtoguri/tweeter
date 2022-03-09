@@ -35,7 +35,7 @@ $( document ).ready(function() {
       </footer>
     </article>`);
     return $tweet;
-  }
+  };
 
   // Function to load all of the tweets from the tweet database
   const loadTweets = function() {
@@ -97,21 +97,14 @@ $( document ).ready(function() {
     const newTweet = $( this ).serialize();
 
     // Post the new tweet
-    $.post("/tweets", newTweet, () => {
+    $.post("/tweets", newTweet, ( tweetData ) => {
       
-      // Right now the call back for posting is a get request to only get the new tweet and prepend it to the container, is there a better way?
-      $.get("/tweets", ( data ) => {
-        
-        // Create a new html tweet element from the most recently added tweet and render it at the top of the tweet container
-        const $tweet = createTweetElement(data[data.length - 1]);
-        $('#tweets-container').prepend($tweet);
+      // Clear the text from the new tweet form and resest the counter
+      $("#tweet-text").val("").trigger("input");
 
-        // Clear the text from the new tweet form and resest the counter
-        // Could prob use ( this ) to clear the form text as well -- just a thought
-        // maybe this should be moved to above the get request, directly after succsessful post
-        $("#tweet-text").val("");
-        this.counter.value = 140;
-      });
+      // Create a new html tweet element from the most recently added tweet and render it at the top of the tweet container
+      const $tweet = createTweetElement(tweetData);
+      $( '#tweets-container' ).prepend($tweet);
     });
   })
 });
